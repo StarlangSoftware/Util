@@ -14,8 +14,8 @@
     </properties>
     <distributionManagement>
         <repository>
-            <id>NlpToolkit</id>
-            <url>http://haydut.isikun.edu.tr:8081/artifactory/NlpToolkit</url>
+            <id>github</id>
+            <url>https://github.com/StarlangSoftware/Util</url>
         </repository>
     </distributionManagement>
     <build>
