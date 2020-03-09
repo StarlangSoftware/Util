@@ -15,7 +15,7 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <url>https://github.com/StarlangSoftware/Util</url>
+            <url>https://maven.pkg.github.com/starlangsoftware/util</url>
         </repository>
     </distributionManagement>
     <build>
