@@ -85,6 +85,8 @@ Util
 
 ### Maven Usage
 
-    <groupId>NlpToolkit</groupId>
-    <artifactId>Util</artifactId>
-    <version>1.0.0</version>
+	<dependency>
+  	<groupId>NlpToolkit</groupId>
+  	<artifactId>Util</artifactId>
+  	<version>1.0.0</version>
+	</dependency>
