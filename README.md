@@ -81,6 +81,7 @@ Use below line to generate jar file:
 Util
 ============
 + [Maven Usage](#maven-usage)
++ [Examples](#examples)
 
 
 ### Maven Usage
@@ -90,3 +91,100 @@ Util
   	<artifactId>Util</artifactId>
   	<version>1.0.0</version>
 	</dependency>
+
+### Examples
+
+
+ * Tuple
+ 
+ 	One Tuple consist of two integer number First and Last respectively.
+	
+         Tuple tuple = new Tuple(1,4);
+ * Interval
+ 
+ 	Creating an Interval and adding tuples with given integers First and Last respectively.
+ 	 
+          Interval interval = new Interval();
+	   interval.add(1,2);
+	   interval.add(3,5);
+	   interval.add(5,2);
+	   
+	The first element at the list with interval's given index.
+	  
+	   System.out.println(interval.getFirst(1));
+	   System.out.println(interval.getLast(2));
+	   
+	Output
+	
+	   First Element of Index 1 : 3
+	   Last Element of Index 2  : 2
+	   
+ * RandomNormalizedArray
+ 	
+	Gets an integer itemCount as an input. Creates an array of size itemCount and loops through each element of the array and initializes them with a random number, at the end each array element divided to sum.
+	
+	Creates a double array as a size of 3 and divide each element to sum.
+	 
+	   RandomNormalizedArray randomNormalizedArray = new RandomNormalizedArray(3);
+	   printDoubleArray(randomNormalizedArray.get());
+	   
+	Output
+	
+	   0.4463255068168585,0.11337478842358989,0.4402997047595516
+	   
+     
+ * Permutation
+ 
+ 	Creates an integer array 0 to given input which is 3.By using .get() method we can get the generated array.
+	
+	   Permutation permutation = new Permutation(3);
+	   printIntegerArray(permutation.get());
+	   
+	Output
+	   
+	   0,1,2
+	   
+	 All permutations of array.
+	
+	   while(permutation.next()!=false){
+	   permutation.next();
+	   printIntegerArray(permutation.get());
+           }
+	   
+	Output
+	
+	   1. [0][1][2]
+          2. [1][0][2]
+          3. [2][0][1]
+          4. [2][1][0]
+	   
+ 
+  * SubsetFromList
+         
+	 Creates subsets from given integer array with given element count which in this case is 3.
+	    
+	    int[] arrayList = {5,21,0,9,5,3};
+	    SubsetFromList subsetFromList = new SubsetFromList(arrayList,3);
+	 
+	 Using .set() method we can get the current set and using .next() will create new subsets.
+	  
+	    while (subsetFromList.next()!=false){
+            subsetFromList.next();
+            printIntegerArray(subsetFromList.set);
+            }
+   	 
+	 Output
+	 
+	    [5][21][5]
+	    [5][0][9]
+            [5][0][3]
+            [5][9][3]
+            [21][0][9]
+            [21][0][3]
+            [21][9][3]
+            [0][9][5]
+            [0][5][3]
+            [9][5][3]
+	   
+	   
+          
