@@ -78,7 +78,7 @@ Use below line to generate jar file:
 
 ------------------------------------------------
 
-Util
+Detailed Description
 ============
 + [Maven Usage](#maven-usage)
 + [Interval](#interval)
