@@ -81,7 +81,10 @@ Use below line to generate jar file:
 Util
 ============
 + [Maven Usage](#maven-usage)
-+ [Examples](#examples)
++ [Interval](#interval)
++ [Subset](#subset)
++ [SubsetFromList](#subsetfromlist)
++ [Permutation](#permutation)
 
 
 ### Maven Usage
@@ -92,99 +95,86 @@ Util
   	<version>1.0.0</version>
 	</dependency>
 
-### Examples
+## Interval 
 
+Aralık veri yapısını tutmak için Interval sınıfı
 
- * Tuple
- 
- 	One Tuple consist of two integer number First and Last respectively.
-	
-         Tuple tuple = new Tuple(1,4);
- * Interval
- 
- 	Creating an Interval and adding tuples with given integers First and Last respectively.
- 	 
-          Interval interval = new Interval();
-	   interval.add(1,2);
-	   interval.add(3,5);
-	   interval.add(5,2);
-	   
-	The first element at the list with interval's given index.
-	  
-	   System.out.println(interval.getFirst(1));
-	   System.out.println(interval.getLast(2));
-	   
-	Output
-	
-	   First Element of Index 1 : 3
-	   Last Element of Index 2  : 2
-	   
- * RandomNormalizedArray
- 	
-	Gets an integer itemCount as an input. Creates an array of size itemCount and loops through each element of the array and initializes them with a random number, at the end each array element divided to sum.
-	
-	Creates a double array as a size of 3 and divide each element to sum.
-	 
-	   RandomNormalizedArray randomNormalizedArray = new RandomNormalizedArray(3);
-	   printDoubleArray(randomNormalizedArray.get());
-	   
-	Output
-	
-	   0.4463255068168585,0.11337478842358989,0.4402997047595516
-	   
-     
- * Permutation
- 
- 	Creates an integer array 0 to given input which is 3.By using .get() method we can get the generated array.
-	
-	   Permutation permutation = new Permutation(3);
-	   printIntegerArray(permutation.get());
-	   
-	Output
-	   
-	   0,1,2
-	   
-	 All permutations of array.
-	
-	   while(permutation.next()!=false){
-	   permutation.next();
-	   printIntegerArray(permutation.get());
-           }
-	   
-	Output
-	
-	   1. [0][1][2]
-          2. [1][0][2]
-          3. [2][0][1]
-          4. [2][1][0]
-	   
- 
-  * SubsetFromList
-         
-	 Creates subsets from given integer array with given element count which in this case is 3.
-	    
-	    int[] arrayList = {5,21,0,9,5,3};
-	    SubsetFromList subsetFromList = new SubsetFromList(arrayList,3);
-	 
-	 Using .set() method we can get the current set and using .next() will create new subsets.
-	  
-	    while (subsetFromList.next()!=false){
-            subsetFromList.next();
-            printIntegerArray(subsetFromList.set);
-            }
-   	 
-	 Output
-	 
-	    [5][21][5]
-	    [5][0][9]
-            [5][0][3]
-            [5][9][3]
-            [21][0][9]
-            [21][0][3]
-            [21][9][3]
-            [0][9][5]
-            [0][5][3]
-            [9][5][3]
-	   
-	   
-          
+	a = new Interval();
+
+1 ve 4 aralığı eklemek için
+
+	a.add(1, 4);
+
+i. aralığın başını getirmek için (yukarıdaki örnekteki 1 gibi)
+
+	int getFirst(int index)
+
+i. aralığın sonunu getirmek için (yukarıdaki örnekteki 4 gibi)
+
+	int getLast(int index)
+
+## Subset 
+
+Altküme tanımlamak ve tüm altkümelere ulaşmak için Subset ve SubsetFromList sınıfları
+
+Subset veri yapısını tanımlamak için
+
+	Subset(int rangeStart, int rangeEnd, int elementCount)
+
+Burada elemenCount elemanlı, elemanları rangeStart ile rangeEnd arasında değerler alabilen
+tüm altkümeleri gezen bir yapıdan bahsediyoruz. Örneğin
+
+Subset(1, 4, 2), bize iki elemanlı elemanlarını 1 ile 4 arasından gelen tüm alt kümeleri 
+seçmek için kullanılan bir constructor'dır. Tüm altkümeleri elde etmek için
+
+	a = new Subset(1, 4, 2);
+	do{
+		int[] subset = a.get();
+		....
+	}while(a.next());
+
+Burada subset sırasıyla {1, 2}, {1, 3}, {1, 4}, {2, 3}, {2, 4}, {3, 4} altkümelerini gezer. 
+
+## SubsetFromList 
+
+Altküme tanımlamak ve tüm altkümelere ulaşmak için Subset ve SubsetFromList sınıfları
+
+SubsetFromList veri yapısını kullanmak için
+
+	SubsetFromList(int[] list, int elementCount)
+
+Burada elementCount elemanlı, elemanları list listesinden çekilen değerler olan ve tüm 
+altkümeleri gezen bir yapıdan bahsediyoruz. Örneğin
+
+SubsetFromList({1, 2, 3, 4}, 3), bize üç elemanlı elemanlarını {1, 2, 3, 4} listesinden 
+seçen ve tüm alt kümeleri gezmekte kullanılan bir constructor'dır. Tüm altkümeleri elde 
+etmek için
+
+	a = new SubsetFromList({1, 2, 3, 4}, 3);
+	do{
+		int[] subset = a.get();
+		....
+	}while(a.next());
+
+Burada SubsetFromList sırasıyla {1, 2, 3}, {1, 2, 4}, {1, 3, 4}, {2, 3, 4} altkümelerini 
+gezer. 
+
+## Permutation
+
+Permütasyon tanımlamak ve tüm permütasyonlara ulaşmak için Permutation sınıfı
+
+	Permutation(n)
+
+Burada 0 ile n - 1 arasındaki değerlerin tüm olası n'li permütasyonlarını gezen bir 
+yapıdan bahsediyoruz. Örneğin
+
+Permutation(5), bize değerleri 0 ile 4 arasında olan tüm 5'li permütasyonları gezmekte 
+kullanılan bir constructor'dır. Tüm permütasyonları elde etmek için
+
+	a = new Permutation(5)
+	do{
+		int[] permutation = a.get();
+		...
+	}while(a.next());
+
+Burada Permutation sırasıyla {0, 1, 2, 3, 4}, {0, 1, 2, 4, 3} gibi permütasyonları gezer.
