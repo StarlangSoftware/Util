@@ -74,26 +74,22 @@ Use below line to generate jar file:
 
      mvn install
 
-
-
-------------------------------------------------
-
-Detailed Description
-============
-+ [Maven Usage](#maven-usage)
-+ [Interval](#interval)
-+ [Subset](#subset)
-+ [SubsetFromList](#subsetfromlist)
-+ [Permutation](#permutation)
-
-
-### Maven Usage
+## Maven Usage
 
 	<dependency>
   	<groupId>NlpToolkit</groupId>
   	<artifactId>Util</artifactId>
   	<version>1.0.0</version>
 	</dependency>
+
+------------------------------------------------
+
+Detailed Description
+============
++ [Interval](#interval)
++ [Subset](#subset)
++ [SubsetFromList](#subsetfromlist)
++ [Permutation](#permutation)
 
 ## Interval 
 
