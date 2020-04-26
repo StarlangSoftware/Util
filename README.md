@@ -1,8 +1,8 @@
 # Util
 For Developers
 ============
-You can also see [Python](https://github.com/starlangsoftware/Util-Py) 
-, [C++](https://github.com/starlangsoftware/Util-CPP), or [C#](https://github.com/starlangsoftware/Util-CS) repository.
+You can also see [Python](https://github.com/starlangsoftware/Util-Py), [C++](https://github.com/starlangsoftware/Util-CPP), or [C#](https://github.com/starlangsoftware/Util-CS) repository.
+
 ## Requirements
 
 * [Java Development Kit 8 or higher](#java), Open JDK or Oracle JDK
