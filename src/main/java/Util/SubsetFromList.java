@@ -15,13 +15,11 @@ public class SubsetFromList extends Subset {
      * @param elementCount integer input element count.
      */
     public SubsetFromList(int[] list, int elementCount) {
-        int multisetCount, i;
+        int i;
         this.elementList = list;
         this.elementCount = elementCount;
-        multisetCount = ((elementCount + 2) * (elementCount + 1)) / 2;
         set = new int[elementCount];
         indexList = new int[elementCount];
-        multiset = new int[multisetCount];
         for (i = 0; i < elementCount; i++) {
             indexList[i] = i;
             set[i] = elementList[indexList[i]];

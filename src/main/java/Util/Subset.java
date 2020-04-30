@@ -1,9 +1,7 @@
 package Util;
 
-import java.util.Arrays;
-
 public class Subset {
-    protected int[] set, multiset;
+    protected int[] set;
     private int rangeEnd;
     protected int elementCount;
 
@@ -18,12 +16,10 @@ public class Subset {
      * @param elementCount integer input element count.
      */
     public Subset(int rangeStart, int rangeEnd, int elementCount) {
-        int i, multisetCount;
+        int i;
         this.rangeEnd = rangeEnd;
         this.elementCount = elementCount;
-        multisetCount = ((elementCount + 2) * (elementCount + 1)) / 2;
         set = new int[elementCount];
-        multiset = new int[multisetCount];
         for (i = 0; i < elementCount; i++)
             set[i] = rangeStart + i;
     }
@@ -41,63 +37,6 @@ public class Subset {
      */
     public int[] get() {
         return set;
-    }
-
-    /**
-     * The getX method takes an integer M as an input. Creates a new array X size of elementCount+2 and assigns 0 to its
-     * first element. Starting from the second index, it assigns set {@link java.lang.reflect.Array}'s elements to newly
-     * created {@link java.lang.reflect.Array} X. Then, assigns M to the last element of X.
-     *
-     * @param M integer input.
-     * @return Array size of elementCount+2.
-     */
-    public int[] getX(int M) {
-        int[] X;
-        int i;
-        X = new int[elementCount + 2];
-        X[0] = 0;
-        for (i = 0; i < elementCount; i++) {
-            X[i + 1] = set[i];
-        }
-        X[elementCount + 1] = M;
-        return X;
-    }
-
-    /**
-     * Getter for the multiset {@link java.lang.reflect.Array}.
-     *
-     * @return the multiset {@link java.lang.reflect.Array}.
-     */
-    public int[] getmultiset() {
-        return multiset;
-    }
-
-    /**
-     * The multiset method takes an integer M as an input. Assigns ith element of set {@link java.lang.reflect.Array} to even numbered
-     * indices of multiset {@link java.lang.reflect.Array} and M - ith element of set {@link java.lang.reflect.Array} to odd numbered
-     * indices of multiset {@link java.lang.reflect.Array}, and i is between 0 and elementCount. Then, assigns M to jth index of multiset
-     * {@link java.lang.reflect.Array}. At the end, fill up the rest of the multiset {@link java.lang.reflect.Array} via different
-     * indices of set {@link java.lang.reflect.Array} and sort the multiset {@link java.lang.reflect.Array}.
-     *
-     * @param M integer input.
-     */
-    public void multiset(int M) {
-        int i, j, k;
-        j = 0;
-        for (i = 0; i < elementCount; i++) {
-            multiset[j] = set[i];
-            j++;
-            multiset[j] = M - set[i];
-            j++;
-        }
-        multiset[j] = M;
-        j++;
-        for (i = elementCount - 1; i > 0; i--)
-            for (k = i - 1; k >= 0; k--) {
-                multiset[j] = set[i] - set[k];
-                j++;
-            }
-        Arrays.sort(multiset);
     }
 
     /**
