@@ -12,12 +12,11 @@ public class FileUtils {
             if (new java.io.File(fileName).isAbsolute()) {
                 return new FileInputStream(fileName);
             } else {
-                ClassLoader classLoader = FileUtils.class.getClassLoader();
-                inputStream = classLoader.getResourceAsStream(fileName);
-                if (inputStream == null) {
+                try {
                     return new FileInputStream(fileName);
-                } else {
-                    return inputStream;
+                } catch (FileNotFoundException e) {
+                    ClassLoader classLoader = FileUtils.class.getClassLoader();
+                    return classLoader.getResourceAsStream(fileName);
                 }
             }
         } catch (FileNotFoundException e) {
