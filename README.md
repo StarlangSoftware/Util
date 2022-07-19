@@ -3,6 +3,11 @@ For Developers
 
 You can also see [Python](https://github.com/starlangsoftware/Util-Py), [Cython](https://github.com/starlangsoftware/Util-Cy), [C++](https://github.com/starlangsoftware/Util-CPP), [Swift](https://github.com/starlangsoftware/Util-Swift), [Js](https://github.com/starlangsoftware/Util-Js), or [C#](https://github.com/starlangsoftware/Util-CS) repository.
 
+Class Diagram
+============
+
+<img src="classDiagram.png">
+
 ## Requirements
 
 * [Java Development Kit 8 or higher](#java), Open JDK or Oracle JDK
