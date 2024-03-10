@@ -2,8 +2,8 @@ package Util;
 
 public class Permutation {
 
-    private int[] a;
-    private int n;
+    private final int[] a;
+    private final int n;
 
     /**
      * A constructor of {@link Permutation} class which creates a new {@link java.lang.reflect.Array} and assigns integer

@@ -3,7 +3,7 @@ package Util;
 import java.util.ArrayList;
 
 public class Interval {
-    private ArrayList<Tuple> list;
+    private final ArrayList<Tuple> list;
 
     /**
      * A constructor of {@link Interval} class which creates a new {@link ArrayList} list.

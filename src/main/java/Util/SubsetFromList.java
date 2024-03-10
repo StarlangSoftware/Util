@@ -1,8 +1,8 @@
 package Util;
 
 public class SubsetFromList extends Subset {
-    private int[] elementList;
-    private int[] indexList;
+    private final int[] elementList;
+    private final int[] indexList;
 
     /**
      * A constructor of {@link SubsetFromList} class takes an integer list and an integer elementCount as inputs. It initializes

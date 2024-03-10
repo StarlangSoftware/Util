@@ -30,7 +30,7 @@ public class RandomArray {
     }
 
     public static ArrayList<Integer> indexArray(int itemCount, Random random) {
-        ArrayList<Integer> randomArray = new ArrayList<Integer>();
+        ArrayList<Integer> randomArray = new ArrayList<>();
         for (int i = 0; i < itemCount; i++){
             randomArray.add(i);
         }
