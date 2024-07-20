@@ -37,7 +37,7 @@ public class FileUtils {
      * Reads string hash map from an input file.
      * @param fileName Input file containing hash map. Each line of the file contains two words separated via space.
      */
-    public HashMap<String, String> readHashMap(String fileName){
+    public static HashMap<String, String> readHashMap(String fileName){
         HashMap<String, String> result = new HashMap<>();
         String line;
         try {
