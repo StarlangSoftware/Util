@@ -1,8 +1,8 @@
 package Util;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 
 public class FileUtils {
 
@@ -32,4 +32,25 @@ public class FileUtils {
         }
         return null;
     }
+
+    /**
+     * Reads string hash map from an input file.
+     * @param fileName Input file containing hash map. Each line of the file contains two words separated via space.
+     */
+    public HashMap<String, String> readHashMap(String fileName){
+        HashMap<String, String> result = new HashMap<>();
+        String line;
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(FileUtils.getInputStream(fileName), StandardCharsets.UTF_8));
+            line = br.readLine();
+            while (line != null) {
+                String[] items = line.split(" ");
+                result.put(items[0], items[1]);
+                line = br.readLine();
+            }
+        } catch (IOException ignored) {
+        }
+        return result;
+    }
+
 }
