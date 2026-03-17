@@ -3,11 +3,6 @@ For Developers
 
 You can also see [Python](https://github.com/starlangsoftware/Util-Py), [Cython](https://github.com/starlangsoftware/Util-Cy), [C++](https://github.com/starlangsoftware/Util-CPP), [C](https://github.com/starlangsoftware/Util-C), [Swift](https://github.com/starlangsoftware/Util-Swift), [Js](https://github.com/starlangsoftware/Util-Js), or [C#](https://github.com/starlangsoftware/Util-CS) repository.
 
-Class Diagram
-============
-
-<img src="classDiagram.png">
-
 ## Requirements
 
 * [Java Development Kit 8 or higher](#java), Open JDK or Oracle JDK
@@ -181,6 +176,10 @@ Burada Permutation sırasıyla {0, 1, 2, 3, 4}, {0, 1, 2, 4, 3} gibi permütasyo
 
 For Contibutors
 ============
+
+### Class Diagram
+
+<img src="classDiagram.png">
 
 ### pom.xml file
 1. Standard setup for packaging is similar to:
